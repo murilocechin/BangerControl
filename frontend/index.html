@@ -3,63 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dark Carousel Prototype</title>
-  <!-- Link to CSS -->
+  <title>Dark Carousel - Fixed Arrows</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <!-- 
-    Carousel Navigation (Top of the Screen) 
-    The "pinned" container on the left holds the selected view (static in this example).
+    Top area: pinned item + two arrows + scrollable carousel 
+    laid out via CSS grid so arrows stay on left/right edges 
   -->
   <nav class="carousel-nav" aria-label="Carousel Navigation">
-    
-    <!-- Pinned (Selected) Item on the Left -->
+    <!-- 1) Pinned (Selected) item -->
     <div class="pinned">
       <button class="carousel-item selected" aria-current="true">
         View 1 (Selected)
       </button>
     </div>
 
-    <!-- Scrollable Section (to the right of pinned) -->
-    <div class="scroll-section">
-      <!-- Left arrow for scrolling -->
-      <button class="arrow arrow-left" aria-label="Scroll left">&lt;</button>
+    <!-- 2) Left arrow (scroll left) -->
+    <button class="arrow arrow-left" aria-label="Scroll left">&lt;</button>
 
-      <!-- Horizontally scrollable container -->
-      <div class="carousel-container" tabindex="0">
-        <!-- The rest of the views go here -->
-        <button class="carousel-item">View 2</button>
-        <button class="carousel-item">View 3</button>
-        <button class="carousel-item">View 4</button>
-        <button class="carousel-item">View 5</button>
-        <button class="carousel-item">View 6</button>
-        <button class="carousel-item">View 7</button>
-        <button class="carousel-item">View 8</button>
-        <button class="carousel-item">View 9</button>
-        <button class="carousel-item">View 10</button>
-        <button class="carousel-item">View 11</button>
-        <button class="carousel-item">View 12</button>
-        <button class="carousel-item">View 13</button>
-        <button class="carousel-item">View 14</button>
-      </div>
-
-      <!-- Right arrow for scrolling -->
-      <button class="arrow arrow-right" aria-label="Scroll right">&gt;</button>
+    <!-- 3) Scrollable carousel container -->
+    <div class="carousel-container" tabindex="0">
+      <button class="carousel-item">View 2</button>
+      <button class="carousel-item">View 3</button>
+      <button class="carousel-item">View 4</button>
+      <button class="carousel-item">View 5</button>
+      <button class="carousel-item">View 6</button>
+      <button class="carousel-item">View 7</button>
+      <button class="carousel-item">View 8</button>
+      <button class="carousel-item">View 9</button>
+      <button class="carousel-item">View 10</button>
+      <button class="carousel-item">View 11</button>
+      <button class="carousel-item">View 12</button>
+      <button class="carousel-item">View 13</button>
+      <button class="carousel-item">View 14</button>
     </div>
 
+    <!-- 4) Right arrow (scroll right) -->
+    <button class="arrow arrow-right" aria-label="Scroll right">&gt;</button>
   </nav>
 
-  <!-- Main Content Area (below the carousel) -->
+  <!-- Main content area below the carousel -->
   <main>
     <section id="dynamic-content">
-      <!-- Python-injected content goes here -->
       {{ content }}
     </section>
   </main>
 
-  <!-- Minimal JavaScript for arrow-based scrolling -->
+  <!-- Minimal JS for arrow-based scrolling -->
   <script src="js/carousel.js"></script>
 </body>
 </html>

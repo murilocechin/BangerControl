@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carousel Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 
+    Carousel Navigation (Top of the Screen) 
+    Replace "View # placeholder" with dynamically generated items from Python.
+  -->
+  <nav class="carousel-nav" aria-label="Carousel Navigation">
+    <!-- Left arrow (placeholder for scrolling left) -->
+    <button class="arrow arrow-left" aria-label="Scroll left">
+      &lt;
+    </button>
+
+    <!-- Horizontally scrollable container -->
+    <div class="carousel-container" tabindex="0">
+      <!-- Example items in the carousel -->
+      <button class="carousel-item selected" aria-current="true">
+        <!-- 
+          Python placeholder: 
+          Example: {{ view.name }} 
+        -->
+        View 1 (Selected)
+      </button>
+
+      <button class="carousel-item">
+        <!-- 
+          Python placeholder: 
+          Example: {{ view.name }} 
+        -->
+        View 2
+      </button>
+
+      <button class="carousel-item">
+        View 3
+      </button>
+
+      <button class="carousel-item">
+        View 4
+      </button>
+
+      <button class="carousel-item">
+        View 5
+      </button>
+      <!-- Add or remove items as needed via backend -->
+    </div>
+
+    <!-- Right arrow (placeholder for scrolling right) -->
+    <button class="arrow arrow-right" aria-label="Scroll right">
+      &gt;
+    </button>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main>
+    <section id="dynamic-content">
+      <!-- Python-injected content goes here -->
+      {{ content }}
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Ignore the virtual environment
+bangercontrol_env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE settings and workspace files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# Python packaging artifacts
+*.egg-info/
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.bak
+.DS_Store

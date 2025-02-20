@@ -1,0 +1,146 @@
+/* style.css
+   Dark background
+   Pinned item on the left, scrollable items on the right
+*/
+
+/* RESET & GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;  /* Dark background */
+  color: #ffffff;             /* Light text */
+}
+
+/* Carousel Navigation (top of screen) */
+.carousel-nav {
+  display: flex;
+  align-items: flex-start;  /* Align pinned + scroll section at the top */
+  background-color: #1e1e1e;
+  padding: 1rem;
+}
+
+/* Pinned Section (Selected View) */
+.pinned {
+  /* Keep pinned item to the far left */
+  margin-right: 1rem;
+}
+
+/* The pinned "selected" button uses the same .carousel-item styles
+   plus .selected highlight (see below). */
+
+/* Scroll Section (to the right of pinned) */
+.scroll-section {
+  position: relative; /* So arrows can be absolutely positioned within */
+  flex: 1;            /* Take remaining horizontal space */
+  display: flex;
+  align-items: center;
+}
+
+/* Arrows (Left/Right) */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+  z-index: 2; /* ensure above carousel items */
+}
+
+.arrow-left {
+  left: 0.5rem;
+}
+
+.arrow-right {
+  right: 0.5rem;
+}
+
+.arrow:hover {
+  color: #cccccc;
+}
+
+.arrow:focus {
+  outline: 2px solid #fff;
+}
+
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;          /* Horizontal scroll */
+  scroll-behavior: smooth;
+  width: 100%;               /* Use full width of the scroll-section */
+  margin: 0 3rem;            /* Provide space for the arrows on either side */
+  scrollbar-width: none;     /* Firefox hide scrollbar */
+  padding: 1rem 0;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;            /* Chrome/Safari hide scrollbar */
+}
+
+/*
+  Carousel Item
+  - Each "view" is a clickable button
+  - "selected" class highlights active view
+*/
+.carousel-item {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in;
+  white-space: nowrap;
+}
+
+.carousel-item:hover {
+  background-color: #3a3a3a;
+}
+
+.carousel-item:focus {
+  outline: 2px solid #fff;
+}
+
+.carousel-item.selected {
+  background-color: #ff9800;
+  color: #000;
+}
+
+/* MAIN CONTENT AREA */
+main {
+  min-height: 100vh;       /* Enough space to demonstrate scrolling */
+  background-color: #181818;
+  padding: 2rem;
+}
+
+#dynamic-content {
+  margin: 0 auto;
+  max-width: 900px;
+  background-color: #242424;
+  border: 2px dashed #444;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 600px) {
+  .arrow {
+    font-size: 1.5rem;
+  }
+  .carousel-item {
+    min-width: 90px;
+    padding: 0.75rem 1rem;
+  }
+}
